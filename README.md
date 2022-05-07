@@ -6,7 +6,7 @@
 1. git cloneでrails_taskリポジトリをローカルにコピーする
 
 ```
-git clone https://github.com/KokiOkumura/rails_task.git
+git clone https://github.com/KokiOkumura/rails-task.git
 ```
 2. コピーしたrails_taskディレクトリに移動する
 
