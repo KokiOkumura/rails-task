@@ -11,7 +11,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 
 WORKDIR /rails-task
 
-COPY Gemfile Gemfile.lock /rails-task//
+COPY Gemfile Gemfile.lock /rails-task/
 RUN bundle install
 RUN rm -f tmp/pids/server.pid
 
