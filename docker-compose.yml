@@ -1,0 +1,30 @@
+version: '3'
+
+volumes:
+  db-data:
+
+
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    container_name: 'web'
+    volumes:
+      - '.:/rails-task'
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    container_name: 'db_mysql'
+
+    volumes:
+      - 'db-data:/var/lib/mysql'
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=password'
+      - 'TZ=Asia/Tokyo'
+    ports:
+      - 3306:3306
